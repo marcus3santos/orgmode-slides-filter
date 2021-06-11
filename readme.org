@@ -6,7 +6,7 @@
 
 If you use orgmode to prepare slides for yor lectures you may find this app useful.
 
-This app removes the slides containing the solutions for your in-class exercises, and the slides containing quizzes you would like to present to the class during the lecture.
+This app removes the slides containing the solutions for your in-class exercises and the slides containing quizzes you would like to present to the class during the lecture.
 
 We assume you organize your orgmode slides as follows:
 
