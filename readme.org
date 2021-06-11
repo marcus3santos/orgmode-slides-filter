@@ -32,13 +32,13 @@ When you provide the orgmode slides file above as input to the app, it will gene
 
 * Installation
 
-Compile the list program *om-filter.lisp*. SBCL will generate the executable file *om-filter.fasl*
+Compile the list program *rmv-sq.lisp*. SBCL will generate the executable file *rmv-sq.fasl*
 
 * Usage
 
 To remove the exercise solutions and quizzes from an orgmode slides file, type the following command on the terminal from the root of the folder containing your slides file.
 #+begin_src shell
-sbcl --noinform --load om-filter.fasl --eval '(filter-solutions <in> <out>)' --quit
+sbcl --noinform --load rmv-sq.fasl --eval '(filter-solutions <in> <out>)' --quit
 #+end_src
 where:
 - =<in>= is a string denoting the name of your orgmode slides file, e.g., ="week01.1.org"=
