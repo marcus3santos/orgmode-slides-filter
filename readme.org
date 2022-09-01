@@ -41,7 +41,7 @@ To remove the exercise solutions and quizzes from an orgmode slides file, type t
 sbcl --noinform --load rmv-sq.lisp --eval '(rmv-sol-quiz <in>)' --quit
 #+end_src
 where:
-- =<in>= is a string denoting the full path and name of your orgmode slides file, e.g., *"/Users/username/lecture-slides/week01.1.org"*
+- =<in>= is a string denoting the full path and name of your orgmode slides file, e.g., "/Users/username/lecture-slides/week01.1.org"
 
 =rmv-sol-quiz= will create a folder called *slides-handout/* in the folder where your lecture slides org file is located. In that folder it will create the filtered org file.
 
