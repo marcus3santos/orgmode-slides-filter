@@ -1,0 +1,52 @@
+#+TITLE: Solutions and quiz filter for orgmode slides
+#+AUTHOR: Marcus Santos
+#+OPTIONS: toc:nil num:nil
+
+* Overview 
+
+If you use orgmode to prepare slides for yor lectures you may find this app useful.
+
+This app removes the slides containing the solutions for your in-class exercises and the slides containing quizzes you would like to present to the class during the lecture.
+
+We assume you organize your orgmode slides as follows:
+
+#+begin_example
+ * Lecture 1
+ ** Slide 1
+ Some text
+ ** Slide 2
+ ** Question
+ A question you would like your students to solve during the lecture
+ *** Solution (this header name is important)
+ The question's solution
+ ** Quiz (this header name is important)
+ Text of a quiz you would like to present to the class during the lecture
+ ** Another slide
+#+end_example
+
+When you provide the orgmode slides file above as input to the app, it will generate a new orgmode slides identical to the original one except that it will remove the slides that either the header =*** Solution= or =** Quiz=. Rationale: chances are, you would like to circulate to the students your lecture slides before the lecture and you don't want your students to see the solution of your inclass exercises or the inclass quizzes.
+
+* Dependencies
+
+[[http://www.sbcl.org/][Steel Bank Common Lisp]]
+
+* Installation
+
+Copy the file =rmv-sq.lisp= to the folder where your orgmode slides are located.
+
+* Usage
+
+To remove the exercise solutions and quizzes from an orgmode slides file, type the following command on the terminal from the root of the folder containing your slides file.
+#+begin_src shell
+sbcl --noinform --load rmv-sq.lisp --eval '(rmv-sol-quiz <in>)' --quit
+#+end_src
+where:
+- =<in>= is a string denoting the full path and name of your orgmode slides file, e.g., ="/Users/username/lecture-slides/week01.1.org"=
+
+=rmv-sol-quiz= will create a folder called *slides-handout/* in the folder where your lecture slides org file is located. In that folder it will create the filtered org file.
+
+We assume you have included each exercise solution in a slide that starts with the following header
+- =*** Solution=
+
+We assume you have included each quiz in a slide that starts with the following header
+- =** Quiz=
